@@ -22,7 +22,8 @@
             $('#transactionTable').DataTable({
                 ajax: {
                     url: '@Url.Action("GetTransactionHistory")',
-                    type: 'POST'
+                    type: 'POST',
+                   dataSrc: ''
                 },
                 columns: [
                     { data: 'transactionId' },
@@ -33,7 +34,6 @@
                     { data: 'currentBalance' },
                     { data: 'transactionDate' }
                 ]
-
             });
         });
     </script>

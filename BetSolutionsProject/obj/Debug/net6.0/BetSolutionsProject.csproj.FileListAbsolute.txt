@@ -285,3 +285,4 @@ C:\Users\kobaq\source\repos\BetSolutionsProject\BetSolutionsProject\bin\Debug\ne
 C:\Users\kobaq\source\repos\BetSolutionsProject\BetSolutionsProject\bin\Debug\net6.0\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\kobaq\source\repos\BetSolutionsProject\BetSolutionsProject\bin\Debug\net6.0\runtimes\win-x86\native\e_sqlite3.dll
 C:\Users\kobaq\source\repos\BetSolutionsProject\BetSolutionsProject\bin\Debug\net6.0\Dapper.dll
+C:\Users\kobaq\source\repos\BetSolutionsProject\BetSolutionsProject\obj\Debug\net6.0\BetSolutionsProject.sourcelink.json

@@ -1,7 +1,6 @@
 ﻿using BetSolutionsProject.Models;
 using BetSolutionsProject.Repositories.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using System.Linq;
 
 namespace BetSolutionsProject.Controllers
 {
@@ -25,7 +24,8 @@ namespace BetSolutionsProject.Controllers
         {
             try
             {
-                var transactions = _transactionRepository.GetTransactionHistory();
+                var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+                var transactions = _transactionRepository.GetTransactionHistory(userId);
                 Console.WriteLine("Transactions retrieved successfully.");
                 return Json(transactions);
             }
@@ -36,5 +36,4 @@ namespace BetSolutionsProject.Controllers
             }
         }
     }
-
-}
+    }

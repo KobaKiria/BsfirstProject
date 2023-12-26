@@ -6,6 +6,10 @@ namespace BetSolutionsProject.Repositories.Interfaces
 
     public interface ITransactionRepository
     {
-            public IEnumerable<Transactions> GetTransactionHistory();
+        decimal GetCurrentBalance(string userId);
+        public IEnumerable<Transactions> GetTransactionHistory(string userId);
+        void CreateWallet(string userId, decimal currentBalance);
+        void Deposit(string userId, decimal amount);
+        void Withdraw(string userId, decimal amount);
     }
 }

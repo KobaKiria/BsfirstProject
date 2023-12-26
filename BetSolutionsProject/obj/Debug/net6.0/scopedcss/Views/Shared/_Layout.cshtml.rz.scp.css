@@ -1,10 +1,9 @@
-/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
+/* Your existing styles... */
 
 a.navbar-brand[b-107vwu94dx] {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
 }
 
 a[b-107vwu94dx] {
@@ -17,7 +16,8 @@ a[b-107vwu94dx] {
     border-color: #27ae60;
 }
 
-.nav-pills .nav-link.active[b-107vwu94dx], .nav-pills .show > .nav-link[b-107vwu94dx] {
+.nav-pills .nav-link.active[b-107vwu94dx],
+.nav-pills .show > .nav-link[b-107vwu94dx] {
     color: #fff;
     background-color: #3498db;
     border-color: #2980b9;
@@ -26,6 +26,7 @@ a[b-107vwu94dx] {
 .border-top[b-107vwu94dx] {
     border-top: 1px solid #dcdcdc;
 }
+
 .border-bottom[b-107vwu94dx] {
     border-bottom: 1px solid #dcdcdc;
 }
@@ -35,8 +36,8 @@ a[b-107vwu94dx] {
 }
 
 button.accept-policy[b-107vwu94dx] {
-  font-size: 1rem;
-  line-height: inherit;
+    font-size: 1rem;
+    line-height: inherit;
 }
 
 .footer[b-107vwu94dx] {
@@ -47,15 +48,21 @@ button.accept-policy[b-107vwu94dx] {
     line-height: 60px;
     background-color: #f8f9fa;
 }
+
+.current-balance[b-107vwu94dx] {
+    color: #333;
+    font-size: 16px;
+}
+
 .navbar-nav .dropdown-menu[b-107vwu94dx] {
-    border: 1px solid #dcdcdc; /* Dropdown border color */
+    border: 1px solid #dcdcdc;
 }
 
 .navbar-nav .dropdown-item[b-107vwu94dx] {
-    color: #333; /* Dropdown item text color */
+    color: #333;
 }
 
     .navbar-nav .dropdown-item:hover[b-107vwu94dx],
     .navbar-nav .dropdown-item:focus[b-107vwu94dx] {
-        background-color: #f8f9fa; /* Dropdown item hover/focus background color */
+        background-color: #f8f9fa;
     }

@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BetSolutionsProject")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eec915e4d99c7b36dc5e49fcce6cf8f2f7e252fc")]
 [assembly: System.Reflection.AssemblyProductAttribute("BetSolutionsProject")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BetSolutionsProject")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

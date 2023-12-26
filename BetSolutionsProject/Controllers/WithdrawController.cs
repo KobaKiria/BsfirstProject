@@ -5,10 +5,10 @@ namespace BetSolutionsProject.Controllers
 {
     public class WithdrawController : Controller
     {
-        private readonly IWalletRepository _walletRepository;
-        public WithdrawController(IWalletRepository walletRepository)
+        private readonly ITransactionRepository _transactionRepository;
+        public WithdrawController(ITransactionRepository walletRepository)
         {
-            _walletRepository = walletRepository;
+            _transactionRepository = walletRepository;
         }
         public IActionResult Index()
         {
@@ -20,7 +20,7 @@ namespace BetSolutionsProject.Controllers
         {
             var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
 
-            _walletRepository.Withdraw(userId, amount);
+            _transactionRepository.Withdraw(userId, amount);
 
             ViewData["Message"] = $"Successfull Witdrawal: {amount}.";
 

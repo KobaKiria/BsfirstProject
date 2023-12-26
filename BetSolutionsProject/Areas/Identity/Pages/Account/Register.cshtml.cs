@@ -21,13 +21,15 @@ using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 using BetSolutionsProject.Repositories;
 using BetSolutionsProject.Repositories.Interfaces;
+using BetSolutionsProject.Controllers;
+using System.Data.SqlClient;
+
 
 namespace BetSolutionsProject.Areas.Identity.Pages.Account
 {
     public class RegisterModel : PageModel
     {
-        private readonly IWalletRepository _walletRepository;
-
+        private readonly ITransactionRepository _transactionRepository;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly IUserStore<ApplicationUser> _userStore;
@@ -41,7 +43,7 @@ namespace BetSolutionsProject.Areas.Identity.Pages.Account
             SignInManager<ApplicationUser> signInManager,
             ILogger<RegisterModel> logger,
             IEmailSender emailSender,
-            IWalletRepository walletRepository)
+            ITransactionRepository transactionRepository)
         {
             _userManager = userManager;
             _userStore = userStore;
@@ -49,7 +51,7 @@ namespace BetSolutionsProject.Areas.Identity.Pages.Account
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
-            _walletRepository = walletRepository;
+            _transactionRepository = transactionRepository;
         }
 
         /// <summary>
@@ -142,7 +144,7 @@ namespace BetSolutionsProject.Areas.Identity.Pages.Account
 
                 if (result.Succeeded)
                 {
-                     _walletRepository.CreateWallet(user.Id, currentBalance: 0);
+                    _transactionRepository.CreateWallet(user.Id, currentBalance: 0);
                     _logger.LogInformation("User created a new account with password.");
 
                     var userId = await _userManager.GetUserIdAsync(user);

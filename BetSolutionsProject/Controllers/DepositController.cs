@@ -5,11 +5,11 @@ namespace BetSolutionsProject.Controllers
 {
     public class DepositController : Controller
     {
-        private readonly IWalletRepository _walletRepository;
+        private readonly ITransactionRepository _transactionRepository;
 
-        public DepositController(IWalletRepository walletRepository)
+        public DepositController(ITransactionRepository transactionRepository)
         {
-            _walletRepository = walletRepository;
+            _transactionRepository = transactionRepository;
         }
 
         public IActionResult Index()
@@ -22,7 +22,7 @@ namespace BetSolutionsProject.Controllers
         {
             var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
 
-            _walletRepository.Deposit(userId, amount);
+            _transactionRepository.Deposit(userId, amount);
 
             ViewData["Message"] = $"Successfully deposited {amount}.";
 

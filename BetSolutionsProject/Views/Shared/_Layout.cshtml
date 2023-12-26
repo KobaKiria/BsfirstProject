@@ -36,6 +36,9 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Transactions" asp-action="Index">Transactions</a>
                         </li>
+                        <div id="currentBalanceContainer" class="current-balance">
+                            Current Balance: <span id="currentBalance"></span>
+                        </div>
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>
@@ -61,3 +64,25 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        function updateCurrentBalance() {
+            $.ajax({
+                url: '/api/getCurrentBalance', // Update the URL
+                method: 'GET',
+                success: function (data) {
+                    document.getElementById('currentBalance').textContent = data.currentBalance;
+                },
+                error: function (error) {
+                    console.error('Error fetching current balance:', error);
+                }
+            });
+        }
+
+        // Initial call to update current balance
+        updateCurrentBalance();
+
+        // Set up an interval to refresh the current balance every 30 seconds
+        setInterval(updateCurrentBalance, 30000); // 30 seconds in milliseconds
+    });
+</script>
