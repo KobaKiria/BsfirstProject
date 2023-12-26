@@ -1,0 +1,61 @@
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand[b-107vwu94dx] {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a[b-107vwu94dx] {
+    color: #3498db;
+}
+
+.btn-primary[b-107vwu94dx] {
+    color: #fff;
+    background-color: #2ecc71;
+    border-color: #27ae60;
+}
+
+.nav-pills .nav-link.active[b-107vwu94dx], .nav-pills .show > .nav-link[b-107vwu94dx] {
+    color: #fff;
+    background-color: #3498db;
+    border-color: #2980b9;
+}
+
+.border-top[b-107vwu94dx] {
+    border-top: 1px solid #dcdcdc;
+}
+.border-bottom[b-107vwu94dx] {
+    border-bottom: 1px solid #dcdcdc;
+}
+
+.box-shadow[b-107vwu94dx] {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .1);
+}
+
+button.accept-policy[b-107vwu94dx] {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.footer[b-107vwu94dx] {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+    background-color: #f8f9fa;
+}
+.navbar-nav .dropdown-menu[b-107vwu94dx] {
+    border: 1px solid #dcdcdc; /* Dropdown border color */
+}
+
+.navbar-nav .dropdown-item[b-107vwu94dx] {
+    color: #333; /* Dropdown item text color */
+}
+
+    .navbar-nav .dropdown-item:hover[b-107vwu94dx],
+    .navbar-nav .dropdown-item:focus[b-107vwu94dx] {
+        background-color: #f8f9fa; /* Dropdown item hover/focus background color */
+    }

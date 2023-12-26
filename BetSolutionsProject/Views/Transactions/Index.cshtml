@@ -1,0 +1,40 @@
+﻿@model List<Transactions>
+
+<h2>Transaction History</h2>
+
+<table id="transactionTable" class="display">
+    <thead>
+        <tr>
+            <th>Transaction ID</th>
+            <th>User ID</th>
+            <th>Amount</th>
+            <th>Transaction Type</th>
+            <th>Transaction Status</th>
+            <th>Current Balance</th>
+            <th>Transaction Date</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $('#transactionTable').DataTable({
+                ajax: {
+                    url: '@Url.Action("GetTransactionHistory")',
+                    type: 'POST'
+                },
+                columns: [
+                    { data: 'transactionId' },
+                    { data: 'userId' },
+                    { data: 'amount'},
+                    { data: 'transactionType' },
+                    { data: 'transactionStatus'},
+                    { data: 'currentBalance' },
+                    { data: 'transactionDate' }
+                ]
+
+            });
+        });
+    </script>
+}
