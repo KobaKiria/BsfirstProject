@@ -49,11 +49,6 @@ button.accept-policy {
     background-color: #f8f9fa;
 }
 
-.current-balance {
-    color: #333;
-    font-size: 16px;
-}
-
 .navbar-nav .dropdown-menu {
     border: 1px solid #dcdcdc;
 }
@@ -66,3 +61,16 @@ button.accept-policy {
     .navbar-nav .dropdown-item:focus {
         background-color: #f8f9fa;
     }
+
+/* Updated current balance style */
+.current-balance {
+    color: #333;
+    font-size: 1rem; /* Adjusted font size to match navbar links */
+    padding: .5rem 1rem; /* Similar padding to navbar links for consistency */
+    border: 1px solid #3498db; /* A subtle border for the outline effect */
+    border-radius: .25rem; /* Optional: rounded corners */
+    margin-left: 1rem; /* Optional: adjust as needed for positioning */
+    line-height: normal; /* Adjust line height to align with navbar items */
+    display: flex;
+    align-items: center; /* Ensures vertical center alignment */
+}

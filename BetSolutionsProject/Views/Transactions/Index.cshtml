@@ -1,8 +1,25 @@
-﻿@model List<Transactions>
+﻿
+@model List<Transactions>
+
+@{
+    ViewData["Title"] = "Transaction History";
+}
 
 <h2>Transaction History</h2>
 
-<table id="transactionTable" class="display">
+<!-- Date Range Filter -->
+<div class="date-filter">
+    <label for="startDate">Start Date:</label>
+    <input type="date" id="startDate" name="startDate">
+
+    <label for="endDate">End Date:</label>
+    <input type="date" id="endDate" name="endDate">
+
+    <button id="filterButton">Filter</button>
+    <button id="resetButton">Reset</button>
+</div>
+
+<table id="transactionTable" class="display dataTable nowrap" style="width:100%">
     <thead>
         <tr>
             <th>Transaction ID</th>
@@ -16,24 +33,47 @@
     </thead>
     <tbody></tbody>
 </table>
-@section scripts {
+
+@section Scripts {
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
     <script>
         $(document).ready(function () {
-            $('#transactionTable').DataTable({
+            var table = $('#transactionTable').DataTable({
+                responsive: true,
                 ajax: {
                     url: '@Url.Action("GetTransactionHistory")',
                     type: 'POST',
-                   dataSrc: ''
+                    dataSrc: ''
                 },
                 columns: [
                     { data: 'transactionId' },
                     { data: 'userId' },
-                    { data: 'amount'},
+                    { data: 'amount' },
                     { data: 'transactionType' },
-                    { data: 'transactionStatus'},
+                    { data: 'transactionStatus' },
                     { data: 'currentBalance' },
                     { data: 'transactionDate' }
                 ]
+            });
+
+            $('#filterButton').on('click', function() {
+                var startDate = $('#startDate').val();
+                var endDate = $('#endDate').val();
+
+                // Update DataTable with new data based on date filter
+                table.ajax.url('@Url.Action("GetTransactionHistory")' + '?startDate=' + startDate + '&endDate=' + endDate).load();
+            });
+
+            $('#resetButton').on('click', function() {
+                // Reset the date inputs
+                $('#startDate').val('');
+                $('#endDate').val('');
+
+                // Reload DataTable without date filters
+                table.ajax.url('@Url.Action("GetTransactionHistory")').load();
             });
         });
     </script>

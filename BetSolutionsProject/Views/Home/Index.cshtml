@@ -3,5 +3,13 @@
 }
 
 <div class="text-center">
-    <p>Welcome To Koba's first Project at Betsolutions</p>
+    <h1>Welcome To Koba's First Project at Betsolutions</h1>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <p>Now, you can withdraw/deposit money or see your transaction history.</p>
+    }
+    else
+    {
+        <p>Here, you can deposit/withdraw your money or see transaction history but for that, you need to register or log in first.</p>
+    }
 </div>

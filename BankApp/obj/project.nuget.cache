@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "UPLhMB3idGSmihtu/1lJSPfdl0gv7nA5FAuxtuRA5cPKKXfv9shSByFW0yLwjpYjc3C4A/g902j4fq89PNd4dA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\kobaq\\source\\repos\\BetSolutionsProject\\BankApp\\BankApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kobaq\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\kobaq\\.nuget\\packages\\restsharp\\110.2.0\\restsharp.110.2.0.nupkg.sha512",
+    "C:\\Users\\kobaq\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\kobaq\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
+    "C:\\Users\\kobaq\\.nuget\\packages\\system.text.json\\7.0.2\\system.text.json.7.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

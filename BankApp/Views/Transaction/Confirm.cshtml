@@ -1,0 +1,36 @@
+﻿@model ConfirmationView
+
+<h2>Confirm Transaction</h2>
+<div>
+    <p>You are trying to deposit: @Model.Amount</p>
+</div>
+
+<input id="Transaction" type="hidden" name="TransactionId" value="@Model.TransactionId" />
+<input id="Amount" type="hidden" name="Amount" value="@Model.Amount" />
+<div>
+    <label>Card Number:</label>
+    <input type="text" name="CardNumber" required />
+</div>
+<button id="confirmButton" type="button">Submit</button>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#confirmButton').on('click', function () {
+            var Transaction = $('#Transaction').val();
+            var Amount = $('#Amount').val();
+            $.ajax({
+                type: 'POST',
+                data: { transactionId: Transaction, amount: Amount },
+                url: '@Url.Action("ConfirmTransaction", "Transaction")',
+                success: function (response) {
+                    alert("Deposit successfully completed.");
+                    window.location.href = 'https://localhost:7004/'; 
+                },
+                error: function (xhr, status, error) {
+                    alert("An error occurred: " + error);
+                }
+            });
+        });
+    });
+</script>

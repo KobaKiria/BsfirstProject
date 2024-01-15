@@ -1,6 +1,7 @@
 ﻿using BetSolutionsProject.Models;
 using BetSolutionsProject.Repositories.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace BetSolutionsProject.Controllers
 {
@@ -20,14 +21,18 @@ namespace BetSolutionsProject.Controllers
         }
 
         [HttpPost]
-        public IActionResult GetTransactionHistory()
+        public IActionResult GetTransactionHistory(DateTime? startDate, DateTime? endDate)
         {
             try
             {
                 var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
-                var transactions = _transactionRepository.GetTransactionHistory(userId);
+                var transactions = _transactionRepository.GetTransactionHistory(userId, startDate, endDate);
                 Console.WriteLine("Transactions retrieved successfully.");
                 return Json(transactions);
+            }
+            catch (InvalidOperationException ex)
+            {
+                return BadRequest(new { error = ex.Message });
             }
             catch (Exception ex)
             {
@@ -35,5 +40,14 @@ namespace BetSolutionsProject.Controllers
                 return BadRequest(new { error = ex.Message });
             }
         }
+        
+   /*     public IActionResult Deposit(decimal amount)
+        {
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var transactionId = _transactionRepository.Deposit(userId, amount);
+
+            var bankAppUrl = $"https://localhost:7116/Transaction/Confirm?transactionId={transactionId}&userId={userId}&amount={amount}";
+            return Redirect(bankAppUrl);
+        }*/
     }
     }

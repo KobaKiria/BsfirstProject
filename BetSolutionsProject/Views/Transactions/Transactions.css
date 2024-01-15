@@ -1,0 +1,54 @@
+﻿
+.dataTables_wrapper {
+    font-family: Arial, sans-serif;
+    font-size: 0.9em;
+    margin: 20px 0;
+}
+
+    .dataTables_wrapper .dataTables_length,
+    .dataTables_wrapper .dataTables_filter {
+        margin-bottom: 20px;
+    }
+
+    .dataTables_wrapper .dataTables_info {
+        margin-top: 20px;
+    }
+
+    .dataTables_wrapper .dataTables_paginate {
+        float: right;
+        margin-top: 10px;
+    }
+
+#transactionTable thead th {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    text-align: left;
+}
+
+
+#transactionTable tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+#transactionTable tbody tr:hover {
+    background-color: #ddd;
+}
+
+
+#transactionTable td {
+    padding: 10px;
+    text-align: left; 
+    border-bottom: 1px solid #ddd;
+}
+.date-filter {
+    margin-bottom: 20px;
+}
+
+    .date-filter label {
+        margin-right: 5px;
+    }
+
+    .date-filter input {
+        margin-right: 10px;
+    }

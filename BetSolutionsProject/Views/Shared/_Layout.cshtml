@@ -21,24 +21,27 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link text-dark dropdown-toggle" href="#" id="paymentDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Payments
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="paymentDropdown">
-                                <a class="dropdown-item" asp-area="" asp-controller="Withdraw" asp-action="Index">Withdraw</a>
-                                <a class="dropdown-item" asp-area="" asp-controller="Deposit" asp-action="Index">Deposit</a>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link text-dark dropdown-toggle" href="#" id="paymentDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Payments
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="paymentDropdown">
+                                    <a class="dropdown-item" asp-area="" asp-controller="Withdraw" asp-action="Index">Withdraw</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Deposit" asp-action="Index">Deposit</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Transactions" asp-action="Index">Transactions</a>
+                            </li>
+                            <div id="currentBalanceContainer" class="current-balance">
+                                Current Balance: <span id="currentBalance"></span>
                             </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Transactions" asp-action="Index">Transactions</a>
-                        </li>
-                        <div id="currentBalanceContainer" class="current-balance">
-                            Current Balance: <span id="currentBalance"></span>
-                        </div>
+                        }
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>

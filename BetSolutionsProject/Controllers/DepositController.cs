@@ -22,11 +22,10 @@ namespace BetSolutionsProject.Controllers
         {
             var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
 
-            _transactionRepository.Deposit(userId, amount);
+            var transactionId = _transactionRepository.Deposit(userId, amount);
 
-            ViewData["Message"] = $"Successfully deposited {amount}.";
-
-            return View();
+            var bankAppUrl = $"https://localhost:7116/Transaction/Confirm?transactionId={transactionId}&userId={userId}&amount={amount}"; 
+            return Redirect(bankAppUrl);
         }
     }
 }
